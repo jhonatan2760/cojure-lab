@@ -4,4 +4,10 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (println (map inc [1 2 3 4]))
+  (println (str "Hello" "there" "i'm using a String"))
+  (println "Hello, World!")
+  ;control-flow
+  (if true
+    (println "By Zeus's hammer!")
+    (println "By acquaman's trident!")))
