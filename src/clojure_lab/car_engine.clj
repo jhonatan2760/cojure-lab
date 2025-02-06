@@ -1,4 +1,5 @@
-(ns clojure_lab.car_engine)
+(ns clojure_lab.car-engine
+  (:require [schema.core :as s]))
 
 (def max-fuel-amount 300)
 (def max-turbo-pressure 1.8)
@@ -29,11 +30,8 @@
 
 ; nil, true, false, truthiness, Equality, and Boolean Expressions
 (defn turn-on-engine [car]
-  (if (not (nil? car))
-    (assoc car :engine-powered true)
-    nil))
+  (when (not (nil? car))
+    (assoc car :engine-powered true)))
 
-(defn throttle-car []
-  (let [car (turn-on-engine {:fuel-level 100 :turbo-pressure 0.0 :engine-powered false})]))
 
 

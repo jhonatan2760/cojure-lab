@@ -1,13 +1,13 @@
 (ns clojure-lab.core
-  (:gen-class))
+  (:require [clojure_lab.car-engine :as car]))
+
+(def pulse-abarth
+  {:model "Pulse Abarth"
+   :engine "GSE-T270"
+   :fuel-level 100
+   :turbo-pressure 0.0})
 
 (defn -main
-  "I don't do a whole lot ... yet."
+  "Execute car routine..."
   [& args]
-  (println (map inc [1 2 3 4]))
-  (println (str "Hello" "there" "i'm using a String"))
-  (println "Hello, World!")
-  ;control-flow
-  (if true
-    (println "By Zeus's hammer!")
-    (println "By acquaman's trident!")))
+  (println (car/insert-more-gas! pulse-abarth 120)))
