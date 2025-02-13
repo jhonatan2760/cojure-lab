@@ -17,6 +17,5 @@
 (defn -main
   "Execute car routine..."
   [& args]
-  (-> pulse-abarth
-      :turbo-pressure
-      (garage.logic/increase-turbo-pressure 1.2)))
+  (let [pressured-cars (map #(garage.logic/increase-turbo-pressure (:turbo-pressure %) 1.2) [pulse-abarth fastback-abarth])]
+    (println pressured-cars)))
