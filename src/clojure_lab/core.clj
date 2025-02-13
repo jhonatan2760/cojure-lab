@@ -1,5 +1,6 @@
 (ns clojure-lab.core
-  (:require [clojure_lab.car-engine :as car]))
+  (:require [clojure-lab.garage.model.car :as garage.model]
+            [clojure-lab.garage.logic.engine-logic :as garage.logic]))
 
 (def pulse-abarth
   {:model "Pulse Abarth"
@@ -17,5 +18,5 @@
   "Execute car routine..."
   [& args]
   (-> pulse-abarth
-      (car/insert-more-gas! 120)
-      (println)))
+      :turbo-pressure
+      (garage.logic/increase-turbo-pressure 1.2)))
